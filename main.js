@@ -1,5 +1,16 @@
 let cvs = document.getElementById("myCanvas");
+let leftBtn = document.getElementById("left");
+let rightBtn = document.getElementById("right");
+let upBtn = document.getElementById("up");
+let downBtn = document.getElementById("down");
+
 let ctx = cvs.getContext("2d");
+
+let maxWidth = innerWidth;
+let maxHeight = innerHeight * 0.8;
+cvs.width = maxWidth;
+cvs.height = maxHeight;
+
 
 let w = 40;
 let h = 40;
@@ -12,14 +23,14 @@ let y = 0;
 
 
 function draw() {
-  ctx.clearRect(0, 0, 300, 150);
+  ctx.clearRect(0, 0, maxWidth, maxHeight);
   i += x;
   j += y;
 
-  if (i > 300) i = 0;
-  if (j > 150) j = 0;
-  if (i < 0) i = 300;
-  if (j < 0) j = 150;
+  if (i > maxWidth) i = 0;
+  if (j > maxHeight) j = 0;
+  if (i < 0) i = maxWidth;
+  if (j < 0) j = maxHeight;
 
   ctx.fillStyle = "red";
   ctx.fillRect(i, j, w, h);
@@ -45,9 +56,25 @@ addEventListener("keydown", function(event) {
         x = 1
         y = 0;
     }
-
-
 })
+
+leftBtn.addEventListener("click", function() {
+    x = -1;
+    y = 0;
+})
+rightBtn.addEventListener("click", function() {
+    x = 1
+    y = 0;
+})
+downBtn.addEventListener("click", function() {
+    x = 0;
+    y = 1;
+})
+upBtn.addEventListener("click", function() {
+    x = 0;
+    y = -1;
+})
+
 
 
 

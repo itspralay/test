@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Its Pralay</title>
-</head>
-<body bgcolor="black">
-    <canvas id="myCanvas" style="outline: solid 5px green; background: white"></canvas>
-
+    <style>
+      body {
+        background-color: aqua;
+        margin: 0;
+        height: 100svh;
+        touch-action: none;
+        user-select: none;
+        overflow: hidden; 
+      }
+      canvas {
+        background: white;
+      }
+      button {
+        background-color: yellow;
+        padding: 10px;
+        margin: 10px;
+        width: 60px;
+        height: 40px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <br />
+    <button id="left">LEFT</button>
+    <button id="right">RIGHT</button>
+    <button id="up">UP</button>
+    <button id="down">DOWN</button>
 
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
